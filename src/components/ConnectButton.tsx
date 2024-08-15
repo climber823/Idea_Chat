@@ -5,6 +5,7 @@ import {
   WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
 import { useNavigate } from "react-router-dom";
+
 // import { ArrowIcon, PhantomIcon } from "./Icons";
 
 import("@solana/wallet-adapter-react-ui/styles.css");
@@ -21,6 +22,7 @@ export const SolanaConnect: React.FC = () => {
 
   const handleConnect = async () => {
     try {
+      console.log("here")
       await connect();
       if (publicKey) {
         navigate("/chat");
@@ -34,16 +36,9 @@ export const SolanaConnect: React.FC = () => {
   return (
     <WalletModalProvider>
       <WalletMultiButton
-        
         onClick={handleConnect}
       >
-        {/* <div className="flex items-center w-full gap-[10px] lg:gap-[20px] xl:gap-[25px] 2xl:gap-[30px]">
-          <PhantomIcon />
-          <p className="uppercase font-jbm text-[15px] lg:text-[24px]">
-            connect your wallet
-          </p>
-          <ArrowIcon />
-        </div> */}
+        Connect
       </WalletMultiButton>
     </WalletModalProvider>
   );

@@ -182,3 +182,9 @@ input[type='number']::-webkit-inner-spin-button {
   transform: scale(0.9);
   transition: opacity 500ms, transform 500ms;
 }
+
+.wallet-adapter-button {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
