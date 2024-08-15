@@ -6,6 +6,26 @@ import {
 } from "@solana/wallet-adapter-react-ui";
 import { useNavigate } from "react-router-dom";
 
+import styled from "styled-components";
+
+// const CustomWalletButton = styled(WalletMultiButton)`
+//   .wallet-adapter-button {
+//     width: 100% !important;
+//     text-align: center;
+//     justify-content: center;
+//     background-color: white;
+//   }
+// `;
+
+// const CustomWalletProvider = styled(WalletModalProvider)`
+//   .wallet-adapter-button {
+//     width: 100% !important;
+//     text-align: center;
+//     justify-content: center;
+//     background-color: white;
+//   }
+// `;
+
 // import { ArrowIcon, PhantomIcon } from "./Icons";
 
 import("@solana/wallet-adapter-react-ui/styles.css");
@@ -38,7 +58,7 @@ export const SolanaConnect: React.FC = () => {
       <WalletMultiButton
         onClick={handleConnect}
       >
-        Connect
+        CONNECT N GO RETARD
       </WalletMultiButton>
     </WalletModalProvider>
   );
