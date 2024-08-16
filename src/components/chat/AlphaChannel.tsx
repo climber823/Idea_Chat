@@ -18,7 +18,7 @@ const TipName = styled("div")`
 
 // Modal Component
 function TipModal({ open, onClose, theme, call }) {
-
+    
     return (
         <Modal open={open} onClose={onClose}>
             <Box
@@ -121,6 +121,7 @@ export default function AlphaChannel() {
 
     const handleTipClick = (call) => {
         setCallValue(call)
+        // console.log(call)
         setOpenModal(true);
     };
 
@@ -202,11 +203,11 @@ export default function AlphaChannel() {
                                 </Box>
                             </Box>
                         </Box>
+                        <TokenCard/>
+                        
                     </Box>
                 ))}
             </Stack>
-
-            <TokenCard/>
 
             {/* Tip Modal */}
             <TipModal open={openModal} onClose={handleCloseModal} theme={theme} call={callValue} />

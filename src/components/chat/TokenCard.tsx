@@ -128,7 +128,7 @@ const TokenCard = () => {
             border: '2px solid black',
             borderRadius: '50%',
             minWidth: '0px',
-            padding: '0px 5px',
+            padding: '0px 5.8px',
             margin: '0px 8px',
           }}
         >
