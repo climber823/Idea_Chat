@@ -1,16 +1,31 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate  } from "react-router-dom";
 import { SolanaConnect } from "../components/ConnectButton";
 import { Box, useMediaQuery } from "@mui/material";
 
 import bgVideoMobile from '../assets/videos/mobile-blue-bg.mp4';
 import bgVideoDesktop from '../assets/videos/pc-blue-bg.mp4';
 import AnimatedLogo from "../components/buttons/AnimatedLogo";
+import { useWallet } from "@solana/wallet-adapter-react";
 
 export default function Landing() {
+  const { publicKey, disconnect } = useWallet();
+  const navigate = useNavigate();
 
   const isMobile = useMediaQuery("(max-width:768px)");
   const [bgSource, setBgSource] = useState(isMobile ? bgVideoMobile : bgVideoDesktop);
+
+  const disconnectFromWallet = async () => {
+    if (publicKey) {
+      await disconnect();
+      navigate("/");
+    }
+  };
+
+  useEffect(() => {
+    disconnectFromWallet()
+  }, []);
 
   useEffect(() => {
     setBgSource(isMobile ? bgVideoMobile : bgVideoDesktop);

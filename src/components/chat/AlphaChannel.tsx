@@ -8,6 +8,7 @@ import LightButton from "../buttons/LightButton";
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt } from '@fortawesome/free-solid-svg-icons';
+import TokenCard from './TokenCard';
 
 const TipName = styled("div")`
     padding-bottom: 8px;
@@ -204,6 +205,8 @@ export default function AlphaChannel() {
                     </Box>
                 ))}
             </Stack>
+
+            <TokenCard/>
 
             {/* Tip Modal */}
             <TipModal open={openModal} onClose={handleCloseModal} theme={theme} call={callValue} />

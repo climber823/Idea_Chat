@@ -42,7 +42,6 @@ export const SolanaConnect: React.FC = () => {
 
   const handleConnect = async () => {
     try {
-      console.log("here")
       await connect();
       if (publicKey) {
         navigate("/chat");
