@@ -6,6 +6,8 @@ import { generateRandomHex } from '../../utils';
 import Button from "@mui/material/Button";
 import LightButton from "../buttons/LightButton";
 import styled from "styled-components";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBolt } from '@fortawesome/free-solid-svg-icons';
 
 const TipName = styled("div")`
     padding-bottom: 8px;
@@ -55,7 +57,7 @@ function TipModal({ open, onClose, theme, call }) {
                     }}
                     onClick={onClose} // You can handle the actual tipping logic here
                 >
-                    Tip
+                    <FontAwesomeIcon icon={faBolt} size="1x" className='mr-1'/>Tip
                 </Button>
                 <Button
                     sx={{
@@ -180,7 +182,8 @@ export default function AlphaChannel() {
                                     gap: "6px"
                                 }}
                                 className="px-3 py-1 rounded">
-                                <LightButton />
+                                {/* <LightButton /> */}
+                                <FontAwesomeIcon icon={faBolt} size="1x"/>
                                 Tip
                             </Button>
                         </div>
